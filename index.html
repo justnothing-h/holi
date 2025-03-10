@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi My Love ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff4e50, #fc913a, #f9d423, #eae374, #2ecc71, #3498db, #9b59b6);
+            background-size: 400% 400%;
+            animation: gradientBG 10s infinite alternate;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .colors {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .color-splash {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            animation: splash 2s infinite alternate;
+        }
+
+        @keyframes splash {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background: #ff4081;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e91e63;
+        }
+
+        .color-explosion {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 50%);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            position: absolute;
+            pointer-events: none;
+            animation: explode 1s forwards;
+        }
+
+        @keyframes explode {
+            0% { opacity: 1; transform: scale(0); }
+            100% { opacity: 0; transform: scale(3); }
+        }
+        a {
+    text-decoration: none;  /* Removes underline */
+    color: inherit; /* Inherits text color from parent */
+    transition: 3s;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Holi My Love ❤️</h1>
+        <p>May your life be as colorful as these beautiful Holi colors! 🌸🌈</p>
+        <div class="colors">
+            <div class="color-splash" style="background: #ff4e50;"></div>
+            <div class="color-splash" style="background: #fc913a;"></div>
+            <div class="color-splash" style="background: #f9d423;"></div>
+            <div class="color-splash" style="background: #2ecc71;"></div>
+            <div class="color-splash" style="background: #3498db;"></div>
+            <div class="color-splash" style="background: #9b59b6;"></div>
+        </div>
+        <button class="btn" onclick="triggerExplosion(event)"><a href="https://www.oyorooms.com/?utm_source=google&utm_medium=cpc&utm_device=c&utm_campaign=India_SEM_Brand_generic&utm_campaignid=1701551904&utm_adgroup=71982097371&utm_content=538023998106&utm_keyword=oyo%20rooms&gad_source=1&gclid=Cj0KCQjwm7q-BhDRARIsACD6-fVpI8JslK6Ww8Koc25W7ritygQklQvFx7KgojLlGhJxlKAEj-FPfSUaAkJjEALw_wcB"> Together 🎉</a></button>
+    </div>
+
+    <script>
+        function triggerExplosion(event) {
+            for (let i = 0; i < 10; i++) {
+                let explosion = document.createElement("div");
+                explosion.classList.add("color-explosion");
+                document.body.appendChild(explosion);
+
+                let x = event.clientX + (Math.random() * 100 - 50);
+                let y = event.clientY + (Math.random() * 100 - 50);
+                let colors = ['#ff4e50', '#fc913a', '#f9d423', '#2ecc71', '#3498db', '#9b59b6'];
+                explosion.style.background = colors[Math.floor(Math.random() * colors.length)];
+                explosion.style.left = x + "px";
+                explosion.style.top = y + "px";
+
+                setTimeout(() => { explosion.remove(); }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
